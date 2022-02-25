@@ -30,6 +30,7 @@ typedef struct s_list{
 	int		i_pids;
 }t_elems;
 
+int		ft_len(char **str);
 void	wait_all(t_elems *elems);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	**ft_split(char const *s, char c);

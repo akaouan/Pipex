@@ -17,7 +17,9 @@ int	is_path(char *arg, char **path)
 	int		i;
 	int		sign;
 	char	*cmd;
+	int		paths;
 
+	paths = ft_len(path);
 	i = 0;
 	sign = 0;
 	arg = ft_strjoin("/", arg);
@@ -29,7 +31,7 @@ int	is_path(char *arg, char **path)
 		free(cmd);
 		i++;
 	}
-	if (sign > 5)
+	if (sign >= paths)
 		return (0);
 	return (1);
 }

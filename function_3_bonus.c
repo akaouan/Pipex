@@ -12,6 +12,16 @@
 
 #include <pipex_bonus.h>
 
+int	ft_len(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
 void	wait_all(t_elems *elems)
 {
 	int	i;

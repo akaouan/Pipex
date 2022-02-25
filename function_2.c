@@ -14,9 +14,18 @@
 
 void	paths_error(char *cmd, char **paths)
 {
+	char	*error;
+	char	*to_free;
+
+	error = NULL;
+	to_free = NULL;
 	if (!is_path(cmd, paths))
 	{
-		perror(cmd + 1);
+		to_free = ft_strjoin(cmd + 1, "\n");
+		error = ft_strjoin("zsh: command not found: ", to_free);
+		write(2, error, ft_strlen(error));
+		free(error);
+		free(to_free);
 		exit(0);
 	}
 }

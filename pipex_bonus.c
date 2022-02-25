@@ -86,6 +86,5 @@ int	main(int ac, char **av, char **env)
 		wait_all(elems);
 		freeing(elems);
 	}
-	system("leaks pipex_bonus");
 	return (0);
 }
